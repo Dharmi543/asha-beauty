@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asha • Make You Feel Beautiful</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500&amp;display=swap');
+
+    :root {
+      --bg: #FFFBF7;
+      --pale-pink: #FFF5F5;
+      --soft-pink: #FCE8E8;
+      --rose: #E96B7A;
+      --deep-rose: #D44F60;
+      --gold: #C5A26F;
+      --text: #1F1B18;
+      --text-light: #5C4A44;
+      --white: #FFFFFF;
+    }
+
+    .luxury-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .bright-bg {
+      background-color: #FFFBF7;
+    }
+
+    .pale-pink-bg {
+      background-color: #FFF5F5;
+    }
+
+    .soft-pink-bg {
+      background-color: #FCE8E8;
+    }
+
+    .rose-text {
+      color: #E96B7A;
+    }
+
+    .gold-text {
+      color: #C5A26F;
+    }
+
+    .main-text {
+      color: #1F1B18;
+    }
+
+    .nav-bright {
+      background-color: rgba(255, 251, 247, 0.97);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #FFFBF7 0%, #FCE8E8 40%, #FFF5F5 100%);
+    }
+
+    .section-title {
+      font-size: 2.65rem;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .pretty-card {
+      background: #FFFFFF;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #F3E6E0;
+    }
+
+    .pretty-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.06);
+      border-color: #FCE8E8;
+    }
+
+    .service-icon-bright {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(145deg, #FCE8E8, #FFF5F5);
+      color: #E96B7A;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .pretty-card:hover .service-icon-bright {
+      transform: scale(1.08) rotate(3deg);
+      background: linear-gradient(145deg, #E96B7A, #D44F60);
+      color: white;
+    }
+
+    .nav-link {
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: #E96B7A;
+    }
+
+    .bright-btn {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .bright-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* High contrast pink button */
+    .pink-gold-btn {
+      background: linear-gradient(90deg, #E96B7A, #D44F60);
+      color: white;
+      box-shadow: 0 4px 14px -2px rgb(233 107 122 / 0.4);
+    }
+    .pink-gold-btn:hover {
+      box-shadow: 0 10px 20px -4px rgb(233 107 122 / 0.5);
+    }
+
+    .gold-btn {
+      background: #C5A26F;
+      color: white;
+    }
+    .gold-btn:hover {
+      background: #B38C58;
+    }
+
+    .attractive-divider {
+      background: linear-gradient(to right, transparent, #FCE8E8, transparent);
+    }
+
+    .photo-frame {
+      background: #FFF5F5;
+      border: 1px solid #F3E6E0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .photo-frame:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 25px -8px rgb(0 0 0 / 0.1);
+    }
+
+    .sparkle {
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.65; }
+    }
+
+    .easy-step {
+      transition: all 0.3s ease;
+    }
+    .easy-step:hover {
+      transform: translateY(-3px);
+    }
+
+    .friendly-text {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #5C4A44;
+    }
+
+    /* High contrast text everywhere */
+    .high-contrast {
+      color: #1F1B18;
+    }
+  </style>
+</head>
+<body class="bright-bg main-text font-sans antialiased">
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-bright border-b border-[#F3E6E0]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <div class="flex items-center gap-x-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#E96B7A] to-[#D44F60] flex items-center justify-center shadow">
+            <span class="text-white text-3xl font-serif tracking-tight">A</span>
+          </div>
+          <span class="text-4xl font-semibold tracking-tight luxury-serif">Asha</span>
+        </div>
+
+        <!-- Nav Links -->
+        <div class="hidden md:flex items-center gap-x-9 text-sm font-semibold">
+          <a href="#how" class="nav-link">How it works</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#work" class="nav-link">My Work</a>
+          <a href="#love" class="nav-link">Love Notes</a>
+        </div>
+
+        <div>
+          <a href="#connect" 
+             class="inline-flex items-center px-6 py-2.5 text-sm font-semibold rounded-2xl bg-[#1F1B18] text-white hover:bg-black transition-all bright-btn">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO - Bright with excellent contrast -->
+  <header class="pt-20">
+    <div class="hero-gradient min-h-[96vh] flex items-center">
+      <div class="max-w-6xl mx-auto px-6 pt-12 pb-16">
+        <div class="max-w-[720px]">
+          <!-- Happy badge -->
+          <div class="inline-flex items-center gap-2 bg-white shadow-sm px-5 py-2 rounded-3xl mb-6 border border-[#F3E6E0]">
+            <span class="text-[#E96B7A]">
+              <i class="fa-solid fa-heart sparkle"></i>
+            </span>
+            <span class="text-sm font-semibold tracking-wide text-[#1F1B18]">Making women glow since 2023</span>
+          </div>
+
+          <h1 class="text-[3.35rem] md:text-[4.35rem] leading-[1.02] tracking-[-2.5px] font-bold luxury-serif high-contrast">
+            Hello beautiful!<br>
+            Let's make you feel<br>
+            <span class="text-[#E96B7A]">your most radiant self.</span>
+          </h1>
+
+          <p class="mt-6 max-w-md text-[19.5px] text-[#5C4A44]">
+            I’m Asha, and I’m here to make your wedding day or special celebration 
+            completely stress-free and unforgettable.
+          </p>
+
+          <div class="mt-9 flex flex-col sm:flex-row gap-4">
+            <a href="#connect" 
+               class="bright-btn inline-flex items-center justify-center gap-x-3 px-9 py-4 rounded-2xl text-lg font-semibold pink-gold-btn text-white">
+              <i class="fa-brands fa-instagram text-xl"></i>
+              <span>DM me on Instagram</span>
+            </a>
+            
+            <a href="#how" 
+               class="inline-flex items-center justify-center gap-x-3 px-7 py-4 text-base font-semibold border-2 border-[#C5A26F] text-[#1F1B18] rounded-2xl hover:bg-white transition bright-btn">
+              See how easy it is
+            </a>
+          </div>
+
+          <div class="mt-8 flex items-center gap-4 text-sm">
+            <div class="flex items-center -space-x-2">
+              <div class="w-6 h-6 bg-[#E96B7A] rounded-full ring-2 ring-white"></div>
+              <div class="w-6 h-6 bg-[#C5A26F] rounded-full ring-2 ring-white"></div>
+              <div class="w-6 h-6 bg-[#D44F60] rounded-full ring-2 ring-white"></div>
+            </div>
+            <span class="text-[#5C4A44]">Over 120 happy women &amp; counting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HASSLE-FREE PROMISE / HOW IT WORKS - Excellent readability -->
+  <section id="how" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-center mb-11">
+      <div class="inline-block px-4 py-1 bg-[#FFF5F5] text-[#E96B7A] text-xs font-bold tracking-[2px] rounded-full mb-3">ZERO STRESS</div>
+      <h2 class="section-title luxury-serif high-contrast">Booking with me is simple &amp; joyful</h2>
+      <p class="mt-3 text-[#5C4A44] max-w-md mx-auto">No long forms. No back-and-forth. Just one DM and I’ll take care of everything.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+      <div class="easy-step bg-white rounded-3xl p-8 border border-[#F3E6E0]">
+        <div class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#FCE8E8] text-[#E96B7A] text-3xl mb-6">
+          <i class="fa-solid fa-paper-plane"></i>
+        </div>
+        <div class="font-bold text-xl mb-2 high-contrast">1. Send me a DM</div>
+        <p class="friendly-text">Message me on Instagram with your date, occasion, and any ideas you have. That’s it!</p>
+      </div>
+
+      <div class="easy-step bg-white rounded-3xl p-8 border border-[#F3E6E0]">
+        <div class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#FCE8E8] text-[#E96B7A] text-3xl mb-6">
+          <i class="fa-solid fa-comments"></i>
+        </div>
+        <div class="font-bold text-xl mb-2 high-contrast">2. Quick chat &amp; planning</div>
+        <p class="friendly-text">I’ll reply fast. We’ll discuss your look, saree, hairstyle — everything — at your convenience.</p>
+      </div>
+
+      <div class="easy-step bg-white rounded-3xl p-8 border border-[#F3E6E0]">
+        <div class="w-11 h-11 flex items-center justify-center rounded-2xl bg-[#FCE8E8] text-[#E96B7A] text-3xl mb-6">
+          <i class="fa-solid fa-magic"></i>
+        </div>
+        <div class="font-bold text-xl mb-2 high-contrast">3. Show up &amp; shine</div>
+        <p class="friendly-text">I’ll handle all the glam, draping &amp; details. You just enjoy your beautiful day feeling confident and radiant.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <p class="text-sm text-[#5C4A44] flex items-center justify-center gap-2">
+        <i class="fa-solid fa-check text-[#E96B7A]"></i> 
+        <span class="high-contrast">I come to your home or venue. Everything is taken care of.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES - Bright with perfect contrast -->
+  <section id="services" class="pale-pink-bg py-14">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-9">
+        <div>
+          <span class="uppercase tracking-widest text-xs font-bold text-[#E96B7A]">What I lovingly offer</span>
+          <h2 class="section-title luxury-serif mt-1 high-contrast">Services that make you glow</h2>
+        </div>
+        <a href="#connect" class="mt-4 md:mt-0 text-sm font-semibold text-[#E96B7A] hover:underline">Ready to book? →</a>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Bridal Makeover -->
+        <div class="pretty-card rounded-3xl p-8">
+          <div class="service-icon-bright mb-8">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3 class="text-2xl font-semibold luxury-serif high-contrast">Bridal Makeovers</h3>
+          <p class="mt-3 text-[#5C4A44]">Flawless, long-lasting bridal makeup that brings out your natural beauty and matches your dream look perfectly.</p>
+          <div class="mt-5 text-xs font-semibold tracking-wider text-[#E96B7A]">WEDDING • ENGAGEMENT • RECEPTION</div>
+        </div>
+
+        <!-- Hairstyles -->
+        <div class="pretty-card rounded-3xl p-8">
+          <div class="service-icon-bright mb-8">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <h3 class="text-2xl font-semibold luxury-serif high-contrast">Advanced Hairstyles</h3>
+          <p class="mt-3 text-[#5C4A44]">Stunning updos, elegant waves, traditional braids, and modern styles that complete your entire look.</p>
+          <div class="mt-5 text-xs font-semibold tracking-wider text-[#E96B7A]">TRADITIONAL &amp; CONTEMPORARY</div>
+        </div>
+
+        <!-- Saree Draping -->
+        <div class="pretty-card rounded-3xl p-8">
+          <div class="service-icon-bright mb-8">
+            <i class="fa-solid fa-vest"></i>
+          </div>
+          <h3 class="text-2xl font-semibold luxury-serif high-contrast">Saree Drapings</h3>
+          <p class="mt-3 text-[#5C4A44]">Beautiful, precise draping in every style — classic, modern, designer, and fusion. You’ll look and feel like a queen.</p>
+          <div class="mt-5 text-xs font-semibold tracking-wider text-[#E96B7A]">ANY OCCASION • ANY SAREE</div>
+        </div>
+
+        <!-- Box Folding -->
+        <div class="pretty-card rounded-3xl p-8">
+          <div class="service-icon-bright mb-8">
+            <i class="fa-solid fa-box"></i>
+          </div>
+          <h3 class="text-2xl font-semibold luxury-serif high-contrast">Box Folding &amp; Pre-Pleating</h3>
+          <p class="mt-3 text-[#5C4A44]">Perfect box folding and pre-pleating so your sarees are always ready, crisp, and drape like a dream. Huge time saver!</p>
+          <div class="mt-5 text-xs font-semibold tracking-wider text-[#E96B7A]">BRIDES • FAMILIES • GIFTS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MY WORK - Bright Attractive Gallery -->
+  <section id="work" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-center mb-9">
+      <span class="text-[#E96B7A] text-xs font-bold tracking-[2px] uppercase">Real transformations</span>
+      <h2 class="section-title luxury-serif mt-1 high-contrast">A few of my favourite moments</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <!-- Demo Image 1: Bridal Makeover -->
+      <div class="photo-frame aspect-[4/3.2] rounded-3xl overflow-hidden relative group shadow-sm">
+        <img src="images/bridal-makeover.jpg" 
+             alt="Beautiful Indian bride with flawless soft romantic bridal makeup and elegant hairstyle by Asha" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+            <div class="text-sm font-semibold tracking-wide">Bridal Makeover</div>
+            <div class="text-xs opacity-95">Soft romantic glam</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Image 2: Elegant Hairstyle -->
+      <div class="photo-frame aspect-[4/3.2] rounded-3xl overflow-hidden relative group shadow-sm">
+        <img src="images/elegant-hairstyle.jpg" 
+             alt="Elegant Indian woman with sophisticated advanced updo hairstyle and traditional details by Asha" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+            <div class="text-sm font-semibold tracking-wide">Elegant Updo</div>
+            <div class="text-xs opacity-95">Traditional + modern fusion</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Image 3: Saree Draping -->
+      <div class="photo-frame aspect-[4/3.2] rounded-3xl overflow-hidden relative group shadow-sm">
+        <img src="images/saree-draping.jpg" 
+             alt="Stunning Indian woman in a beautifully draped traditional silk saree by Asha" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+            <div class="text-sm font-semibold tracking-wide">Saree Draping</div>
+            <div class="text-xs opacity-95">Classic six-yard elegance</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Image 4: Festive / Pre-Pleated -->
+      <div class="photo-frame aspect-[4/3.2] rounded-3xl overflow-hidden relative group shadow-sm">
+        <img src="images/festive-transformation.jpg" 
+             alt="Radiant Indian woman in a perfectly pre-pleated and draped colorful festive saree with full glam by Asha" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+            <div class="text-sm font-semibold tracking-wide">Pre-Pleated Magic</div>
+            <div class="text-xs opacity-95">Ready in minutes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <p class="text-center mt-6 text-sm text-[#5C4A44]">Real transformations. Book your session today.</p>
+  </section>
+
+  <!-- LOVE NOTES / TESTIMONIALS - FIXED FOR CLEAR TEXT -->
+  <section id="love" class="pale-pink-bg py-14 border-t border-[#F3E6E0]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <div class="inline-block px-4 py-1 bg-white text-[#E96B7A] text-xs font-bold tracking-[1.5px] rounded-full mb-3 shadow-sm">HEARTWARMING WORDS</div>
+        <h2 class="section-title luxury-serif mt-3 high-contrast">Women who felt truly beautiful</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-white rounded-3xl p-8 border border-[#F3E6E0]">
+          <div class="flex text-[#E96B7A] mb-4 text-xl">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="friendly-text">"Asha was a total blessing! Everything was so easy. She understood exactly what I wanted and I felt like a princess. The saree drape was perfect and my makeup stayed flawless the whole day."</p>
+          <div class="mt-6">
+            <div class="font-semibold high-contrast">— Sneha Patel, Bride</div>
+            <div class="text-xs text-[#5C4A44]">March 2026 • Delhi</div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 border border-[#F3E6E0]">
+          <div class="flex text-[#E96B7A] mb-4 text-xl">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="friendly-text">"I was so nervous about my big day but Asha made the whole process zero hassle. She came to my house, did the most beautiful hairstyle and draping. Everyone kept asking who did my look!"</p>
+          <div class="mt-6">
+            <div class="font-semibold high-contrast">— Riya Kapoor, Bride</div>
+            <div class="text-xs text-[#5C4A44]">January 2026 • Gurgaon</div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 border border-[#F3E6E0]">
+          <div class="flex text-[#E96B7A] mb-4 text-xl">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p class="friendly-text">"The pre-pleating service saved my life during my sister’s wedding! All our sarees were perfectly ready. Asha is so warm, professional and talented. Highly recommend to every bride and family."</p>
+          <div class="mt-6">
+            <div class="font-semibold high-contrast">— Megha Jain</div>
+            <div class="text-xs text-[#5C4A44]">December 2025 • Festive Wedding</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CONNECT - Richer gradient for excellent white text readability -->
+  <section id="connect" class="max-w-5xl mx-auto px-6 py-16 text-center">
+    <div class="rounded-[3rem] px-8 py-14 md:py-16 text-white shadow-xl" 
+         style="background: linear-gradient(135deg, #E96B7A 0%, #D44F60 100%);">
+      <div class="max-w-lg mx-auto">
+        <div class="mx-auto mb-5 inline-flex items-center justify-center w-16 h-16 bg-white/25 backdrop-blur rounded-2xl">
+          <i class="fa-solid fa-spa text-4xl text-white"></i>
+        </div>
+
+        <h2 class="text-4xl md:text-[42px] luxury-serif leading-none tracking-tight text-white">Ready to feel beautiful<br>without any stress?</h2>
+        
+        <p class="mt-5 text-lg text-white/95">Just send me a message on Instagram. I’ll take it from there.</p>
+
+        <a href="https://www.instagram.com/asha" target="_blank"
+           class="mt-8 bright-btn mx-auto inline-flex items-center justify-center gap-x-3 bg-white text-[#D44F60] font-semibold text-lg px-10 py-4 rounded-2xl hover:bg-[#FFF5F0]">
+          <i class="fa-brands fa-instagram text-2xl"></i>
+          <span>Message Asha on Instagram</span>
+        </a>
+
+        <div class="mt-7">
+          <a href="https://www.instagram.com/asha" target="_blank"
+             class="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white transition">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Or follow <strong>@asha</strong> for daily inspiration &amp; looks</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-6 text-sm text-[#5C4A44]">No complicated booking forms. No deposits until we chat. Just warmth and beauty.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#F3E6E0]">
+    <div class="max-w-7xl mx-auto px-6 py-7">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-y-3 text-sm text-[#5C4A44]">
+        <div>© <span id="year"></span> Asha. Made with love for every beautiful woman.</div>
+        
+        <div class="flex gap-x-5 text-sm">
+          <a href="#connect" class="hover:text-[#E96B7A]">Book via DM</a>
+          <a href="https://www.instagram.com/asha" target="_blank" class="hover:text-[#E96B7A]">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile floating button - high contrast -->
+  <div class="md:hidden fixed bottom-6 right-6 z-50">
+    <a href="#connect"
+       class="flex items-center gap-2.5 px-6 py-[15px] bg-gradient-to-r from-[#E96B7A] to-[#D44F60] text-white font-semibold text-sm rounded-3xl shadow-2xl">
+      <i class="fa-brands fa-instagram text-lg"></i>
+      <span>DM Asha Now</span>
+    </a>
+  </div>
+
+  <script>
+    function setYear() {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    }
+
+    function smoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    }
+
+    function init() {
+      setYear();
+      smoothScroll();
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>
